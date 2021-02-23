@@ -7,6 +7,7 @@ import javax.print.attribute.standard.JobImpressions;
 import javax.swing.*;
 import java.awt.event.*;
 import java.util.ArrayList;
+import java.util.Vector;
 
 public class MaFenetre extends JFrame {
 
@@ -39,8 +40,8 @@ public class MaFenetre extends JFrame {
         listBDF.setBounds(width/10, 40+height/10, 200, 50);
         getContentPane().add(listBDF);
 
-        JLabel labcb = new JLabel();
-        labcb.setBounds(width/10, 70+height/10, 200, 200);
+        JLabel labcb = new JLabel(bookTitles[1]);
+        labcb.setBounds(width/10, 70+height/10, 200, 50);
         getContentPane().add(labcb);
 
         listBDF.addActionListener(new ActionListener() {
@@ -67,9 +68,21 @@ public class MaFenetre extends JFrame {
         faitsDeduits.setBounds(width/2, height/10, 200, 50);
         getContentPane().add(faitsDeduits);
 
-        JTable table = new JTable();
-        table.setBounds(width/10, height-height/3, 200+4*width/10, height/3-50);
-        getContentPane().add(table);
+        // Initulé des colonnes
+        Vector<String> colonnes = new Vector<String>();
+        colonnes.add("Nom"); colonnes.add("Prénom"); colonnes.add("Age");
+
+        // Contenu de la table
+        Vector<Vector<String>> tablData = new  Vector<Vector<String>>();
+        Vector<String> data1 = new Vector<String>();
+        data1.add("Arthur"); data1.add("Louedec"); data1.add("62");
+        Vector<String> data2 = new Vector<String>();
+        data2.add("Glenn"); data2.add("Louradou"); data2.add("22");
+
+        JTable table = new JTable(tablData, colonnes);
+        JScrollPane pane = new JScrollPane(table);
+        pane.setBounds(width/10, height-height/3, 200+4*width/10, height/3-50);
+        getContentPane().add(pane);
 
         JLabel textBDR = new JLabel("Base de Règles");
         textBDR.setBounds(width/10, height-height/3-50, 200, 50);
