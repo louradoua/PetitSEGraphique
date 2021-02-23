@@ -78,6 +78,7 @@ public class MaFenetre extends JFrame {
         data1.add("Arthur"); data1.add("Louedec"); data1.add("62");
         Vector<String> data2 = new Vector<String>();
         data2.add("Glenn"); data2.add("Louradou"); data2.add("22");
+        tablData.add(data1);tablData.add(data2);
 
         JTable table = new JTable(tablData, colonnes);
         JScrollPane pane = new JScrollPane(table);
