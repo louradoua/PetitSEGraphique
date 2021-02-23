@@ -1,5 +1,7 @@
 package com.company;
 
+// Servez vous la mif ;)
+
 import javax.print.attribute.standard.JobImpressions;
 import javax.swing.*;
 import java.awt.event.*;
