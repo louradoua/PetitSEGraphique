@@ -1,6 +1,7 @@
 package com.company;
 
-// Servez vous la mif ;)
+// Servez vous la mif ;) faites gaffe à pas tout copier tel quel,
+// j'ai fait un peu de zèle ça va se voir !
 
 import javax.print.attribute.standard.JobImpressions;
 import javax.swing.*;
