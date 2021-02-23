@@ -31,11 +31,17 @@ public class MaFenetre extends JFrame {
             });
         getContentPane().add(quit);
 
+
+
         String[] bookTitles = new String[] {"Effective Java","Head First Java","Thinking in Java","Débutez la programmation avec Java"};
 
         JComboBox listBDF = new JComboBox(bookTitles);
         listBDF.setBounds(width/10, 40+height/10, 200, 50);
         getContentPane().add(listBDF);
+
+        JLabel labcb = new JLabel();
+        labcb.setBounds(width/10, 70+height/10, 200, 200);
+        getContentPane().add(labcb);
 
         listBDF.addActionListener(new ActionListener() {
             @Override
@@ -43,7 +49,7 @@ public class MaFenetre extends JFrame {
                 JComboBox cb = (JComboBox) e.getSource();
 
                 Object selected = cb.getSelectedItem();
-                System.out.println("Selected: " + selected);
+                labcb.setText("Selected: " + selected);
                 String command = e.getActionCommand();
                 System.out.println("Action Command: " + command);
             }
